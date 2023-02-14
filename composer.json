@@ -1,0 +1,16 @@
+{
+    "name": "rani/combat-game",
+    "description": "Brief POO combat game",
+    "autoload": {
+        "psr-4": {
+            "Rani\\CombatGame\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rani Derradj",
+            "email": "raniderradj2@gmail.com"
+        }
+    ],
+    "require": {}
+}
