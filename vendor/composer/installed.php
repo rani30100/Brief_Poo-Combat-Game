@@ -1,6 +1,7 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
+        'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
         'reference' => 'f796a702341e6a914d3ddd84e5c8ccc50124406d',
@@ -10,6 +11,7 @@
         'dev' => true,
     ),
     'versions' => array(
+        '__root__' => array(
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
