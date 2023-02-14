@@ -9,26 +9,22 @@ $ennemi2 = new Personnages("Lieutenant", 30, 30);
 
 $ennemi3 = new Personnages("Chef Minion", 100, 100);
 
-$ennemis = [$ennemi1, $ennemi2, $ennemi3];
+$armure =20;
 
-foreach($ennemis as $ennemi) {
-    $heros->attaque($ennemi);
-}
+// $ennemis = [$ennemi1, $ennemi2, $ennemi3];
 
-if ($heros->mort()) {
-    echo "Vous êtes mort !";
-}
+// foreach($ennemis as $ennemi) {
+//     $heros->attaque($ennemi);
+// }
 
+if ($heros->armure($ennemi2, $armure)) {
+    $ennemi2->attaque($heros);
+};
 
-// $heros->attaque($ennemi1);
-// $heros->attaque($ennemi2);
-// $heros->attaque($ennemi3);
-// $ennemi1->attaque($heros);
-// $ennemi2->attaque($heros);
-// $ennemi3->attaque($heros);
+var_dump($heros->getVie());
 
-// echo '$' . 'ennemi' . 1 ;
+// if ($heros->mort()) {
+//     echo "Vous êtes mort !";
+// }
 
-var_dump($ennemi3->getVie());
-
-// $heros->mort();
+// var_dump($ennemi3->getVie());

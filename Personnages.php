@@ -5,6 +5,7 @@ class Personnages {
     private $nom;
     private $vie;
     private $attaque;
+    public $armure = 20;
     
     // méthodes pour aller chercher les variables mises en privées 
     public function getNom (){
@@ -32,8 +33,8 @@ class Personnages {
         return $this->vie += 50;
     }
 
-    public function armure() {
-        return $this->vie += 20;
+    public function armure($cible, $armure) {
+        $this->vie -= ($cible->getAttaque() - $armure);
     }
 
     // méthodes liées aux intéractions entre personnages
