@@ -9,6 +9,6 @@ $ennemi2 = new Personnages("Lieutenant", 30, 30);
 
 $ennemi3 = new Personnages("Chef Minion", 100, 100);
 
-
 var_dump($heros->ajoutVie());
 var_dump($heros->armure());
+var_dump($heros->getattaque());

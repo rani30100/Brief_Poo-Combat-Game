@@ -21,4 +21,11 @@ class Personnages {
     public function armure() {
         return $this->vie += 20;
     }
+
+    public function getAttaque (){
+        return $this->attaque ;    
+        
+    }
+
+
 }
