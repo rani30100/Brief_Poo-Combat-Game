@@ -12,39 +12,48 @@ $ennemi3 = new Personnages ("Chef Minion",100,100);
 $armor = 20;
 
 // Déterminer l'occurrence d'attaque pour chaque ennemies
+$randomHeros = rand(0,1);
 $randomEnnemi1 = rand (0,2);
 $randomEnnemi2 = rand (0,4);
 $randomEnnemi3 = rand (0,6);
 
-if ($randomEnnemi1 === 0 ) {
-    
-    $heros->armor($ennemi2, $armor); 
-    echo "Votre armor a limité les dégats !";
-    var_dump($heros->getLife());
-    
-} else {
-    echo "L'atk de " . $ennemi2->getName() . " n'a pas fonctionné !";
+$ennemis = [$ennemi1, $ennemi2, $ennemi3];
+$randomEnnemi = rand(0,2);
+
+if ($randomHeros === 0 ) {
+    $heros->atk($ennemis[$randomEnnemi]);
     var_dump($heros->getLife());
 }
 
-if ($randomEnnemi2 === 1 ){
-    $heros->armor($ennemi2, $armor); 
-    echo "Votre armor a limité les dégats !";
-    var_dump($heros->getLife());
+if ($randomEnnemi1 === 1 ) {
+    
+    $heros->armor($ennemi1, $armor); 
+    echo "Votre armure a limité les dégats !";
+    
     
 } else {
-    echo "L'atk de " . $ennemi2->getName() . " n'a pas fonctionné !";
-    var_dump($heros->getLife());
+    echo "L'attaque de " . $ennemi1->getName() . " n'a pas fonctionné !";
+    
 }
 
-if ($randomEnnemi3){
+if ($randomEnnemi2 === 3 ){
     $heros->armor($ennemi2, $armor); 
-    echo "Votre armor a limité les dégats !";
-    var_dump($heros->getLife());
+    echo "Votre armure a limité les dégats !";
+    
     
 } else {
-    echo "L'atk de " . $ennemi2->getName() . " n'a pas fonctionné !";
-    var_dump($heros->getLife());
+    echo "L'attaque de " . $ennemi2->getName() . " n'a pas fonctionné !";
+    
+}
+
+if ($randomEnnemi3 === 5){
+    $heros->armor($ennemi3, $armor); 
+    echo "Votre armure a limité les dégats !";
+    
+    
+} else {
+    echo "L'attaque de " . $ennemi3->getName() . " n'a pas fonctionné !";
+    
 }
 
 // condition si le heros meurt 
@@ -72,15 +81,15 @@ if ($heros->death()) {
 
         .personnages {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: end;
-            height: 80%;
+            height: 70%;
             width: 100%;
         }
 
 
         img {
-            width: 50%;
+            width: 40%;
         }
 
         button {
@@ -95,6 +104,7 @@ if ($heros->death()) {
     </style>
 </head>
 <body>
+    <button type="submit">ATTAQUER</button>
     <section class="personnages">
     <div class="minion"><img src="images/minion.png" alt="" ></div>
     <div class="heros"><img src="images/heros.png" alt="" ></div>
@@ -102,6 +112,5 @@ if ($heros->death()) {
     <div class="chefminion"><img src="images/chefminion.png" alt="" ></div>
     </section>
 
-    <button type="submit">ATTAQUER</button>
 </body>
 </html>
