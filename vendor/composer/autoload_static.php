@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8497028afa0e6e8d57811262dd00c31d
+class ComposerStaticInit647f7e720fcf9fbe46d724367e228851
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -17,10 +17,6 @@ class ComposerStaticInit8497028afa0e6e8d57811262dd00c31d
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
-        'R' => 
-        array (
-            'Rani\\CombatGame\\' => 16,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -32,10 +28,6 @@ class ComposerStaticInit8497028afa0e6e8d57811262dd00c31d
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
-        'Rani\\CombatGame\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
     );
 
     public static $classMap = array (
@@ -45,9 +37,9 @@ class ComposerStaticInit8497028afa0e6e8d57811262dd00c31d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8497028afa0e6e8d57811262dd00c31d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8497028afa0e6e8d57811262dd00c31d::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit8497028afa0e6e8d57811262dd00c31d::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit647f7e720fcf9fbe46d724367e228851::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit647f7e720fcf9fbe46d724367e228851::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit647f7e720fcf9fbe46d724367e228851::$classMap;
 
         }, null, ClassLoader::class);
     }
