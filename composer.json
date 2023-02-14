@@ -12,5 +12,7 @@
             "email": "raniderradj2@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "symfony/var-dumper": "^6.2"
+    }
 }
