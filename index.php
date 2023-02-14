@@ -1,5 +1,5 @@
 <?php
-require 'pooGame.php';
+require 'Personnages.php';
 
 $heros = new Personnages ("Meni",200,15);
 
@@ -11,31 +11,12 @@ $ennemi3 = new Personnages ("Chef Minion",100,100);
 
 $armor = 20;
 
-// var_dump($heros->name);
-// var_dump($heros->lifeBonus());
-// var_dump($heros->armorBonus());
+// Déterminer l'occurrence d'attaque pour chaque ennemies
+$randomEnnemi1 = rand (0,2);
+$randomEnnemi2 = rand (0,4);
+$randomEnnemi3 = rand (0,6);
 
-
-$randomEnnemi1 = rand (0,5);
-$randomEnnemi2 = rand (0,2);
-$randomEnnemi3 = rand (0,1);
-$heros = new Personnages("Meni", 200, 15);
-
-//          Function armor => $heros -= (atkennemi - armorHero)
-
-$ennemi2 = new Personnages("Lieutenant", 30, 30);
-
-$ennemi3 = new Personnages("Chef Minion", 100, 100);
-
-$armor = 20;
-
-
-
-
-
-$randomatk = rand(0,6);
-
-if ($randomatk === 6) {
+if ($randomEnnemi1 === 0 ) {
     
     $heros->armor($ennemi2, $armor); 
     echo "Votre armor a limité les dégats !";
@@ -46,10 +27,30 @@ if ($randomatk === 6) {
     var_dump($heros->getLife());
 }
 
+if ($randomEnnemi2 === 1 ){
+    $heros->armor($ennemi2, $armor); 
+    echo "Votre armor a limité les dégats !";
+    var_dump($heros->getLife());
+    
+} else {
+    echo "L'atk de " . $ennemi2->getName() . " n'a pas fonctionné !";
+    var_dump($heros->getLife());
+}
+
+if ($randomEnnemi3){
+    $heros->armor($ennemi2, $armor); 
+    echo "Votre armor a limité les dégats !";
+    var_dump($heros->getLife());
+    
+} else {
+    echo "L'atk de " . $ennemi2->getName() . " n'a pas fonctionné !";
+    var_dump($heros->getLife());
+}
+
+// condition si le heros meurt 
 if ($heros->death()) {
     echo "Vous êtes mort !";
 }
-
 
 ?>
 
@@ -62,7 +63,9 @@ if ($heros->death()) {
     <title>Combat Game</title>
     <style>
         body {
-            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             height: 100vh;
             background: no-repeat url('images/background.jpg') center/cover;
         }
@@ -72,6 +75,7 @@ if ($heros->death()) {
             justify-content: center;
             align-items: end;
             height: 80%;
+            width: 100%;
         }
 
 
@@ -79,7 +83,15 @@ if ($heros->death()) {
             width: 50%;
         }
 
-
+        button {
+            margin-top: 40px;
+            width: 20%;
+            height: 30px;
+            font-size: larger;
+            font-weight: bold;
+            border-radius: 15px;
+            background-color: red;
+        }
     </style>
 </head>
 <body>
@@ -90,42 +102,6 @@ if ($heros->death()) {
     <div class="chefminion"><img src="images/chefminion.png" alt="" ></div>
     </section>
 
-    <button type="submit">atkR</button>
+    <button type="submit">ATTAQUER</button>
 </body>
 </html>
-if ($randomEnnemi1 === 0 ){
-   
-    $heros->atk($ennemie1);
-    var_dump($ennemie1->getLife());
-  
-}else{
-echo "L'ennemie à esquivé !"."<br>";
-};
-
-
-if ($randomEnnemi2 === 1 ){
-
-    $heros->atk($ennemie2);
-    var_dump($ennemie2->getLife());
-}else{
-echo "L'ennemie à esquivé !"."<br>";
-};
-
-if ($randomEnnemi3 === 2 ){
-
-    $heros->atk($ennemie3);
-    var_dump($ennemie3->getLife());
-}else{
-echo "L'ennemie à esquivé !"."<br>";
-};
-
-
-
-
-
-
-if ($heros->armor($ennemie2,$armor)){
-    $ennemie2->atk($heros);
-
-}
-var_dump($heros->getLife());
