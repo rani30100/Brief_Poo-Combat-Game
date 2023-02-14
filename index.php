@@ -1,10 +1,13 @@
 <?php
 require 'pooGame.php';
 
-$heros = new Personnages ("Rani",200,15);
-$ennemie1 = new Personnages ("minion",10,10);
-$ennemie2 = new Personnages ("lieutenant minion",30,30);
-$ennemie3 = new Personnages ("chef minion",100,100);
+$heros = new Personnages ("Meni",200,15);
+
+$ennemi1 = new Personnages ("Minion",10,10);
+
+$ennemi2 = new Personnages ("Lieutenant",30,30);
+
+$ennemi3 = new Personnages ("Chef Minion",100,100);
 
 $armor = 20;
 
@@ -49,8 +52,8 @@ echo "L'ennemie à esquivé !"."<br>";
 
 
 
-// if ($heros->armor($ennemie2,$armor)){
-//     $ennemie2->atk($heros);
+if ($heros->armor($ennemie2,$armor)){
+    $ennemie2->atk($heros);
 
-// }
-// var_dump($heros->getLife());
+}
+var_dump($heros->getLife());

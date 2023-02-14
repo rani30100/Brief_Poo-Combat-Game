@@ -2,16 +2,16 @@
 
 class Personnages{
     private $name;
-    private $vie ;
+    private $life ;
     private $atk ;
     private $armor =20;
 
 
 
 
-public function __construct($name,$vie,$atk){
+public function __construct($name,$life,$atk){
     $this->name=$name;
-    $this->vie=$vie;
+    $this->life=$life;
     $this->atk=$atk;
 }
 
@@ -19,7 +19,7 @@ public function getName(){
     return $this->name;
 }
 public function getLife(){
-    return $this->vie;
+    return $this->life;
  
 }
 public function getAtk(){
@@ -27,12 +27,12 @@ public function getAtk(){
 }
 
 function lifeBonus(){
-    return $this->vie +=50;
+    return $this->life +=50;
 }
 
 
 function death (){
-    if ($cible->vie <=0 ){
+    if ($cible->life <=0 ){
         echo "le méchant est mort";
     } else {
     echo "le méchant à survecu";
@@ -42,12 +42,19 @@ function death (){
 
 
 public function atk($cible){
-    $cible->vie -= $this->getAtk();
+    $cible->life -= $this->getAtk();
+
+
+
+
+
+
+
    
 }
 
 public function armor ($cible,$armor){
-    $this->vie -= ($cible->getAtk() - $armor);
+    $this->life -= ($cible->getAtk() - $armor);
 }
 
 
