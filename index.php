@@ -1,10 +1,14 @@
 <?php
+require 'Personnages.php';
 
-require 'vendor/autoload.php';
-use Rani\CombatGame\Test;
+$heros = new Personnages("Mehdi", 200, 15);
 
-dump([
-    1,
-    "Hello",
-    $rani= "je suis sexy"
-]);
+$ennemi1 = new Personnages("Minion", 10, 10);
+
+$ennemi2 = new Personnages("Lieutenant", 30, 30);
+
+$ennemi3 = new Personnages("Chef Minion", 100, 100);
+
+var_dump($heros->ajoutVie());
+var_dump($heros->armure());
+var_dump($heros->getattaque());
