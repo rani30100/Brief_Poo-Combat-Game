@@ -1,2 +1,5 @@
 <?php
-echo "hey";
+
+class Personnages{
+    
+}
