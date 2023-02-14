@@ -1,49 +1,49 @@
 <?php
-// nom de class avec majuscule
+// name de class avec majuscule
 class Personnages {
 
-    private $nom;
-    private $vie;
-    private $attaque;
-    public $armure = 20;
+    private $name;
+    private $life;
+    private $atk;
+    public $armor = 20;
     
     // méthodes pour aller chercher les variables mises en privées 
-    public function getNom (){
-        return $this->nom ;    
+    public function getName (){
+        return $this->name ;    
         
     }
-    public function getVie (){
-        return $this->vie ;    
+    public function getLife (){
+        return $this->life ;    
         
     }
-    public function getAttaque (){
-        return $this->attaque ;    
+    public function getAtk (){
+        return $this->atk ;    
         
     }
 
-   public function __construct($nom, $vie, $attaque)
+   public function __construct($name, $life, $atk)
     {
-        $this->nom = $nom;
-        $this->vie = $vie;
-        $this->attaque = $attaque;
+        $this->name = $name;
+        $this->life = $life;
+        $this->atk = $atk;
     }
 
     // méthodes liées aux bonus 
-    public function ajoutVie() {
-        return $this->vie += 50;
+    public function lifeBonus() {
+        return $this->life += 50;
     }
 
-    public function armure($cible, $armure) {
-        $this->vie -= ($cible->getAttaque() - $armure);
+    public function armor($cible, $armor) {
+        $this->life -= ($cible->getAtk() - $armor);
     }
 
     // méthodes liées aux intéractions entre personnages
-    public function attaque($cible) {
-        $cible->vie -= $this->getAttaque();
+    public function atk($cible) {
+        $cible->life -= $this->getAtk();
     }
 
-    public function mort() {
-        return $this->vie <= 0;
+    public function death() {
+        return $this->life <= 0;
     }
 
 }

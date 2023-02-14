@@ -1,7 +1,7 @@
 <?php
 require 'Personnages.php';
 
-$heros = new Personnages("Mehdi", 200, 15);
+$heros = new Personnages("Meni", 200, 15);
 
 $ennemi1 = new Personnages("Minion", 10, 10);
 
@@ -9,32 +9,26 @@ $ennemi2 = new Personnages("Lieutenant", 30, 30);
 
 $ennemi3 = new Personnages("Chef Minion", 100, 100);
 
-$armure = 20;
-
-// $ennemis = [$ennemi1, $ennemi2, $ennemi3];
-
-// foreach($ennemis as $ennemi) {
-//     $heros->attaque($ennemi);
-// }
+$armor = 20;
 
 
 
-$randomAttaque = rand(0,1);
 
-if ($randomAttaque === 0) {
+
+$randomatk = rand(0,6);
+
+if ($randomatk === 6) {
     
-    $heros->armure($ennemi2, $armure); 
-    echo "Votre armure a limité les dégats !";
-    var_dump($heros->getVie());
-    // $ennemi2->attaque($heros);
-    // echo $ennemi2->getNom() . " a attaqué !";
+    $heros->armor($ennemi2, $armor); 
+    echo "Votre armor a limité les dégats !";
+    var_dump($heros->getLife());
     
 } else {
-    echo "L'attaque de " . $ennemi2->getNom() . " n'a pas fonctionné !";
-    var_dump($heros->getVie());
+    echo "L'atk de " . $ennemi2->getName() . " n'a pas fonctionné !";
+    var_dump($heros->getLife());
 }
 
-if ($heros->mort()) {
+if ($heros->death()) {
     echo "Vous êtes mort !";
 }
 
@@ -46,7 +40,7 @@ if ($heros->mort()) {
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="lifewport" content="width=device-width, initial-scale=1.0">
     <title>Combat Game</title>
     <style>
         body {
@@ -78,6 +72,6 @@ if ($heros->mort()) {
     <div class="chefminion"><img src="images/chefminion.png" alt="" ></div>
     </section>
 
-    <button type="submit">ATTAQUER</button>
+    <button type="submit">atkR</button>
 </body>
 </html>
