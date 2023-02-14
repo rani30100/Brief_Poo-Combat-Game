@@ -19,7 +19,7 @@ public function getName(){
     return $this->name;
 }
 public function getLife(){
-     $this->vie;
+    return $this->vie;
  
 }
 public function getAtk(){
@@ -30,28 +30,29 @@ function lifeBonus(){
     return $this->vie +=50;
 }
 
-function armorBonus(){
-    return $this->armor +=0;
-}
 
 function death (){
-    if ($this->vie <=0){
-    echo "tu es mort ";
-}
-}
-
-
-public function atk($cible){
-    $cible->vie -= $this->getAtk();
     if ($cible->vie <=0 ){
         echo "le méchant est mort";
     } else {
     echo "le méchant à survecu";
-    };
+    }
+}
 
 
 
-    
+public function atk($cible){
+    $cible->vie -= $this->getAtk();
+   
+}
+
+public function armor ($cible,$armor){
+    $this->vie -= ($cible->getAtk() - $armor);
+}
+
+
+
+
 }
 
 
@@ -61,8 +62,3 @@ public function atk($cible){
 
 
 
-
-
-
-
-}
