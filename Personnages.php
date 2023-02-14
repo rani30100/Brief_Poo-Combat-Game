@@ -2,10 +2,23 @@
 // nom de class avec majuscule
 class Personnages {
 
-    public $nom;
-    public $vie;
-    public $attaque;
+    private $nom;
+    private $vie;
+    private $attaque;
     
+    // méthodes pour aller chercher les variables mises en privées 
+    public function getNom (){
+        return $this->nom ;    
+        
+    }
+    public function getVie (){
+        return $this->vie ;    
+        
+    }
+    public function getAttaque (){
+        return $this->attaque ;    
+        
+    }
 
    public function __construct($nom, $vie, $attaque)
     {
@@ -14,6 +27,7 @@ class Personnages {
         $this->attaque = $attaque;
     }
 
+    // méthodes liées aux bonus 
     public function ajoutVie() {
         return $this->vie += 50;
     }
@@ -22,10 +36,13 @@ class Personnages {
         return $this->vie += 20;
     }
 
-    public function getAttaque (){
-        return $this->attaque ;    
-        
+    // méthodes liées aux intéractions entre personnages
+    public function attaque($cible) {
+        $cible->vie -= $this->getAttaque();
     }
 
+    public function mort() {
+        return $this->vie <= 0;
+    }
 
 }

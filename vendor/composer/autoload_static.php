@@ -17,10 +17,6 @@ class ComposerStaticInit8497028afa0e6e8d57811262dd00c31d
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
-        'R' => 
-        array (
-            'Rani\\CombatGame\\' => 16,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -31,10 +27,6 @@ class ComposerStaticInit8497028afa0e6e8d57811262dd00c31d
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
-        ),
-        'Rani\\CombatGame\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'rani/combat-game',
+        'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '24daf34bc4cb9982f6ff5a39d6cf0549cece9ebd',
+        'reference' => '03e9856e0212f1e655370691f586f94c69a40de4',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'rani/combat-game' => array(
+        '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '24daf34bc4cb9982f6ff5a39d6cf0549cece9ebd',
+            'reference' => '03e9856e0212f1e655370691f586f94c69a40de4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
